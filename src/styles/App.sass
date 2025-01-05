@@ -1,0 +1,157 @@
+$fontSize: 18px
+
+body
+    font-size: $fontSize
+    margin: 0
+    padding: 0
+    background-color: yellow
+    
+    div.wraper
+        box-sizing: border-box
+        position: absolute
+        min-width: 100%
+        margin-top: 0
+        min-height: 100vh
+        background-image: url("../img/tlo.jpg")
+        background-position: center
+        div.header
+            text-align: center
+            text-transform: uppercase
+            position: fixed
+            top: 0
+            left: 0
+            width: 100%
+            background: #CCCCFF
+            z-index: 1
+            h3
+                p
+                    text-align: center
+                    min-width: 200px
+
+        div.corectCounter
+            min-width: 250px
+            position: fixed
+            top: 15px
+            left: 50px
+            text-align: center
+            font-size: 20px
+            z-index: 1
+        div.menu
+            position: fixed
+            right: 100px
+            top: 10px
+            z-index: 1
+            button
+                width: 100px
+                height: 50px
+                font-size: 15px
+                text-transform: uppercase
+            button:hover
+                cursor: pointer
+    
+        div.quizWraper
+            margin-top: 55px
+        div.quiz
+            margin: 0 auto
+            background-color: lightgrey
+            text-align: center
+            font-size: 1em
+            width: 50%
+            padding: 20px
+            border-bottom: 1px solid white
+            p.question
+                font-size: 1em
+                text-align: left
+                text-transform: uppercase
+                font-weight: bold
+                padding: 10px
+            p.answer
+                font-size: .9em
+                text-align: left
+                label:hover
+                    cursor: pointer
+                div.description
+                    position: relative
+                    width: 60%
+                    margin: 80px auto
+                    text-align: center
+                    font-size: 1em
+
+        div.description
+            position: relative
+            width: 60%
+            margin: 80px auto
+            text-align: center
+            font-size: 1em   
+            div.section
+                margin: 0 auto
+                padding: 15px
+                background-color: white
+                opacity: .7
+                h2 
+                    height: 60px
+                    margin: 25px auto
+                    transition: .3s
+                    text-align: left
+                h2:first-letter
+                    text-transform: uppercase
+                    color: red
+                    font-weight: bolder
+                    font-size: 50px
+                h2:hover
+                    cursor: pointer
+                    font-size: 30px
+                div.article
+                    width: 100%
+                    font-weight: bold
+                    text-align: left
+            
+@media (max-width: 1174px) 
+    body
+        div.wraper    
+            div.corectCounter
+                max-width: 150px
+                position: fixed
+                top: 50px
+                left: 0px
+                text-align: center
+                font-size: 15px
+                background-color: blue
+                color: white
+
+@media (max-width: 560px) 
+    body
+        div.wraper   
+            div.quizWraper
+                div.quiz
+                    width: 100%
+            div.menu
+                position: fixed
+                right: 0px
+                top: 10px
+                button
+                    width: 60px
+                    height: 40px
+                    font-size: 10px
+                    text-transform: uppercase   
+            div.description
+                position: relative
+                width: 100%
+                margin: 25px auto
+                text-align: center
+                font-size: 1em
+                min-height: 100vh
+                div.section
+                    margin: 0px auto
+                    padding: 15px
+                    background-color: white
+                    opacity: .7
+                    min-height: 100vh
+                    h2:first-letter
+                        text-transform: uppercase
+                        color: red
+                        font-weight: bolder
+                        font-size: 50px
+            
+        
+           

@@ -3,6 +3,7 @@ import "./styles/App.min.css";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Description from "./components/Description";
+import Quiz from "./Quiz";
 
 const App = () => {
 	const [questions, setQuestions] = useState([]);
@@ -19,7 +20,7 @@ const App = () => {
 			console.log(xhr.status);
 			if (xhr.status === 200) {
 				const questions = JSON.parse(xhr.response);
-
+				console.log(questions);
 				setQuestions(questions);
 				setSubject("");
 			}
@@ -51,62 +52,6 @@ const App = () => {
 		setSubject("");
 		setTitle("");
 	};
-	const quiz = questions.map(item => {
-		return (
-			<div key={item.id} className='quiz'>
-				<p className='question'>{`${item.id + 1}. ${item.pytanie}`}</p>
-				{item.obrazek !== "" && <img src={item.obrazek} alt='question' />}
-				<p className='answer'>
-					<input
-						type='radio'
-						id={item.answers[0]}
-						name={item.id}
-						value={item.answers[0]}
-						onChange={handleCheck}
-					></input>
-					{item.typ === "tekst" ? (
-						<label>{item.answers[0]}</label>
-					) : (
-						<label>
-							<img src={item.answers[0]} alt='picture_a' />
-						</label>
-					)}
-				</p>
-				<p className='answer'>
-					<input
-						type='radio'
-						id={item.answers[1]}
-						name={item.id}
-						value={item.answers[1]}
-						onChange={handleCheck}
-					></input>
-					{item.typ === "tekst" ? (
-						<label>{item.answers[1]}</label>
-					) : (
-						<label>
-							<img src={item.answers[1]} alt='picture_b' />
-						</label>
-					)}
-				</p>
-				<p className='answer'>
-					<input
-						type='radio'
-						id={item.answers[2]}
-						name={item.id}
-						value={item.answers[2]}
-						onChange={handleCheck}
-					></input>
-					{item.typ === "tekst" ? (
-						<label>{item.answers[2]}</label>
-					) : (
-						<label>
-							<img src={item.answers[2]} alt='picture_c' />
-						</label>
-					)}
-				</p>
-			</div>
-		);
-	});
 
 	return (
 		<React.Fragment>
@@ -120,7 +65,11 @@ const App = () => {
 				)}
 				{subject && GetData()}
 				{!title && <Description subject={handleButtonMenu} />}
-				{title && <div className='quizWraper'>{quiz}</div>}
+				{title && (
+					<div className='quizWraper'>
+						<Quiz questions={questions} handleCheck={handleCheck} />
+					</div>
+				)}
 			</div>
 		</React.Fragment>
 	);

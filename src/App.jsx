@@ -51,8 +51,7 @@ const App = () => {
 		setSubject("");
 		setTitle("");
 	};
-	const copyQuestions = questions;
-	const quiz = copyQuestions.map(item => {
+	const quiz = questions.map(item => {
 		return (
 			<div key={item.id} className='quiz'>
 				<p className='question'>{`${item.id + 1}. ${item.pytanie}`}</p>

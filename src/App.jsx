@@ -65,7 +65,7 @@ const App = () => {
 						onChange={handleCheck}
 					></input>
 					{item.typ === "tekst" ? (
-						<label htmlFor='item.answers[0]'>{item.answers[0]}</label>
+						<label>{item.answers[0]}</label>
 					) : (
 						<label>
 							<img src={item.answers[0]} alt='picture_a' />
@@ -81,7 +81,7 @@ const App = () => {
 						onChange={handleCheck}
 					></input>
 					{item.typ === "tekst" ? (
-						<label htmlFor='item.answers[1]'>{item.answers[1]}</label>
+						<label>{item.answers[1]}</label>
 					) : (
 						<label>
 							<img src={item.answers[1]} alt='picture_b' />
@@ -97,7 +97,7 @@ const App = () => {
 						onChange={handleCheck}
 					></input>
 					{item.typ === "tekst" ? (
-						<label htmlFor='item.answers[2]'>{item.answers[2]}</label>
+						<label>{item.answers[2]}</label>
 					) : (
 						<label>
 							<img src={item.answers[2]} alt='picture_c' />
